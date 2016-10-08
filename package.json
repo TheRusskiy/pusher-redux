@@ -15,6 +15,10 @@
     "redux",
     "react"
   ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/TheRusskiy/pusher-redux.git"
+  },
   "author": "dimanrussian@gmail.com",
   "license": "MIT"
 }
