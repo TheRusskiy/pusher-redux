@@ -1,0 +1,20 @@
+{
+  "name": "pusher-redux",
+  "version": "0.0.1",
+  "description": "Integration of Pusher into Redux",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "pusher-js": "^3.2.1"
+  },
+  "keywords": [
+    "pusher",
+    "javascript",
+    "redux",
+    "react"
+  ],
+  "author": "dimanrussian@gmail.com",
+  "license": "MIT"
+}
