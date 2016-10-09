@@ -64,7 +64,7 @@ export class MyPage extends React.Component {
 <code>
 import { NEW_ORDER } from '../pusher/constants';
 ...
-function orderReducer(state = initialState.orders), action) {
+function orderReducer(state = initialState.orders, action) {
   case NEW_ORDER:
     return [...state, action.data.order];
   ...
