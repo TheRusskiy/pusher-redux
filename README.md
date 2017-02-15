@@ -116,6 +116,15 @@ startConfiguration({ // pass options
 </code>
 </pre>
 
+## React Native
+If you want to use react-native then replace ALL imports of `pusher-redux` with `pusher-redux/react-native`
+e.g.
+<pre>
+<code>
+import { startConfiguration } from 'pusher-redux/react-native';
+</code>
+</pre>
+
 ### Options
 
 Pusher-redux accepts all the same options that [pusher-js](https://github.com/pusher/pusher-js#configuration) does
