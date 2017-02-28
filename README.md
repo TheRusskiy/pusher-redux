@@ -45,7 +45,7 @@ export class MyPage extends React.Component {
     this.unsubscribe();
   }
   
-  // upon receiving event 'some_event' for channel 'some_channe' pusher-redux is going to dispatch action NEW_ORDER
+  // upon receiving event 'some_event' for channel 'some_channel' pusher-redux is going to dispatch action NEW_ORDER
   // you can bind multiple actions for the same event and it's gonna dispatch all of them
   subscribe() {
     subscribe('some_channel', 'some_event', NEW_ORDER);
