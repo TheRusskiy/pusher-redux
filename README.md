@@ -1,17 +1,17 @@
-pusher-redux
-=================
+# pusher-redux
 
 Integration of Pusher into Redux
+
 ## Installation
 
 You can download this by executing
 
-<code>npm -i S pusher-redux</code>
+`npm install --save pusher-redux`
+
 ## Usage
 
 #### Configure Pusher
-<pre>
-<code>
+```javascript
 import { configurePusher } from 'pusher-redux';
 ...
 const options = { // options are... optional
@@ -19,14 +19,10 @@ const options = { // options are... optional
 }
 const store = configureStore(initialState);
 configurePusher(store, API_KEY, options);
-</code>
-</pre>
+```
 
 #### Use it in your component
-
-
-<pre>
-<code>
+```javascript
 import { subscribe, unsubscribe } from 'pusher-redux';
 import { NEW_ORDER } from '../pusher/constants';
 ...
@@ -56,12 +52,10 @@ export class MyPage extends React.Component {
   }
   ...
 }
-</code>
-</pre>
+```
 
 #### Change state in your reducer
-<pre>
-<code>
+```javascript
 import { NEW_ORDER } from '../pusher/constants';
 ...
 function orderReducer(state = initialState.orders, action) {
@@ -69,28 +63,24 @@ function orderReducer(state = initialState.orders, action) {
     return [...state, action.data.order];
   ...
 }
-</code>
-</pre>
-
+```
 
 #### Format of actions
 Pusher-redux dispatches actions of the following format:
-<pre>
-<code>
+```javascript
     return {
         type: actionType,
         channel: channelName,
         event: eventName,
         data: data
     };
-</code>
-</pre>
+```
 
-## Delayed configuration
+## Delayed Configuration
 Sometimes you want to authenticate user for receiving pusher information, but you don't have user credentials yet.
 In this case you can do the following:
-<pre>
-<code>
+
+```javascript
 import { delayConfiguration } from 'pusher-redux';
 ...
 const options = { // options are... optional
@@ -98,12 +88,10 @@ const options = { // options are... optional
 }
 const store = configureStore(initialState);
 delayConfiguration(store, API_KEY, options);
-</code>
-</pre>
+```
 
 And once user information is available
-<pre>
-<code>
+```javascript
 import { startConfiguration } from 'pusher-redux';
 ...
 startConfiguration({ // pass options
@@ -113,17 +101,14 @@ startConfiguration({ // pass options
     }
   }
 });
-</code>
-</pre>
+```
 
 ## React Native
 If you want to use react-native then replace ALL imports of `pusher-redux` with `pusher-redux/react-native`
 e.g.
-<pre>
-<code>
+```javascript
 import { startConfiguration } from 'pusher-redux/react-native';
-</code>
-</pre>
+```
 
 ### Options
 
@@ -131,6 +116,6 @@ Pusher-redux accepts all the same options that [pusher-js](https://github.com/pu
 
 ## Contributing
 You are welcome to import more features from [pusher-js](https://github.com/pusher/pusher-js)
-## License
 
+## License
 This code is released under the [MIT License](http://www.opensource.org/licenses/MIT).
