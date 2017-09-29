@@ -1,6 +1,6 @@
 'use strict';
 
 var Pusher = require('pusher-js/dist/web/pusher.js');
-var pusherRedux = require('./pusher-redux');
+var pusherRedux = require('./lib/pusher-redux');
 pusherRedux.setPusherClient(Pusher);
 module.exports = pusherRedux;
