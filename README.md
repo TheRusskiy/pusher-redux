@@ -131,7 +131,15 @@ import { startConfiguration } from 'pusher-redux/react-native';
 
 Pusher-redux accepts all the same options that [pusher-js](https://github.com/pusher/pusher-js#configuration) does
 
+### Old Webpack
+
+If your webpack version does not support [resolve.mainFields](https://webpack.js.org/configuration/resolve/#resolve-mainfields) and for some reason you can't specify `target: 'browser'` instead of using `import { configurePusher } from 'pusher-redux';` you can use `import { configurePusher } from 'pusher-redux/legacy-webpack';`
+Beware that in this case if you compile your code for Node.JS environment it is going to fail.
+
 ### CHANGELOG
+
+#### 0.3.2
+ * Added legacy webpack support
 
 #### 0.3.0
  * Migrated to pusher-js 4.X.X
