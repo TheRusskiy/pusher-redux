@@ -59,6 +59,7 @@ export class MyPage extends React.Component {
 import { NEW_ORDER } from '../pusher/constants';
 ...
 function orderReducer(state = initialState.orders, action) {
+  ...
   case NEW_ORDER:
     return [...state, action.data.order];
   ...
@@ -103,6 +104,22 @@ startConfiguration({ // pass options
 });
 ```
 
+## Monitor Connection Status
+Upon connection status pusher-redux emits actions. You can listed to them.
+
+```javascript
+import { CONNECTED, DISCONNECTED } from 'pusher-redux';
+...
+function connectionStateReducer(state = initialState, action) {
+  ...
+  case CONNECTED:
+    return {...state, connected: true};
+  case DISCONNECTED:
+    return {...state, connected: false};
+  ...
+}
+```
+
 ## React Native
 If you want to use react-native then replace ALL imports of `pusher-redux` with `pusher-redux/react-native`
 e.g.
@@ -113,6 +130,12 @@ import { startConfiguration } from 'pusher-redux/react-native';
 ### Options
 
 Pusher-redux accepts all the same options that [pusher-js](https://github.com/pusher/pusher-js#configuration) does
+
+### CHANGELOG
+
+#### 0.3.0
+ * Migrated to pusher-js 4.X.X
+ * Added CONNECTED and DISCONNECTED actions to monitor connected state
 
 ## Contributing
 You are welcome to import more features from [pusher-js](https://github.com/pusher/pusher-js)
