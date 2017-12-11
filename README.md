@@ -36,17 +36,29 @@ export class MyPage extends React.Component {
   componentWillMount() {
     this.subscribe();
   }
-  
+
   componentWillUnmount() {
     this.unsubscribe();
   }
-  
+
   // upon receiving event 'some_event' for channel 'some_channel' pusher-redux is going to dispatch action NEW_ORDER
+  // add additional params which will be merged into pusherAction and dispatched along with it
   // you can bind multiple actions for the same event and it's gonna dispatch all of them
   subscribe() {
-    subscribe('some_channel', 'some_event', NEW_ORDER);
+    // your additionalParams
+    const additionalParams = () => {}
+
+    subscribe('some_channel', 'some_event', NEW_ORDER, additionalParams);
+
+    // access it within the data object = {
+    //  type: String,
+    //  channel: String,
+    //  event: String,
+    //  data: Object,
+    //  additionalParams: Any
+    // }
   }
-  
+
   unsubscribe() {
     unsubscribe('some_channel', 'some_event', NEW_ORDER);
   }
