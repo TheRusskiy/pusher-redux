@@ -1,6 +1,6 @@
 {
   "name": "pusher-redux",
-  "version": "0.3.6",
+  "version": "0.3.7",
   "description": "Integration of Pusher into Redux",
   "main": "index.js",
   "scripts": {
