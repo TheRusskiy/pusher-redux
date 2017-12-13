@@ -89,6 +89,19 @@ Pusher-redux dispatches actions of the following format:
     };
 ```
 
+#### Get subscribed channels
+```javascript
+import { getChannel } from 'pusher-redux';
+...
+function emitClientEvent(eventName, eventData) {
+  // gets the channel from the client
+  var myChannel = getChannel('some-channel-name');
+
+  // triggers a client event
+  myChannel.trigger(eventName, eventData);
+}
+```
+
 ## Delayed Configuration
 Sometimes you want to authenticate user for receiving pusher information, but you don't have user credentials yet.
 In this case you can do the following:
