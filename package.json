@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    "pusher-js": "^4.2.1"
+    "pusher-js": "^5.0.0"
   },
   "keywords": [
     "pusher",
